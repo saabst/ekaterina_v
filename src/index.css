@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #09100d;
+    color: #f4ede0;
+    overscroll-behavior: none;
+  }
+
+  h1, h2, h3, .font-imperial {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom subtle scrollbars for mobile container */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(212, 175, 55, 0.05);
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.28);
+  border-radius: 9999px;
+}
+
+/* Voice bar wave animation */
+@keyframes voicePulse {
+  0%, 100% {
+    transform: scaleY(0.35);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.voice-bar {
+  animation: voicePulse 0.7s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+@keyframes shimmerGold {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #c59b27 0%,
+    #f6e29c 45%,
+    #d4af37 65%,
+    #b68c1f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmerGold 6s linear infinite;
+}
+
+/* Artifact hotspot pulse */
+@keyframes hotspotBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240, 200, 90, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(240, 200, 90, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240, 200, 90, 0);
+  }
+}
+
+.hotspot-pulse {
+  animation: hotspotBeacon 2.2s infinite;
+}
