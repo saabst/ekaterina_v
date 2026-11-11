@@ -38,8 +38,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ open, onClose }) => {
             <p>
               Все 66 реплик Екатерины II заранее синтезированы нейросетью в двух регистрах
               (<strong>«Официальный»</strong> и <strong>«Как с Вольтером»</strong>) с лёгким аристократическим
-              немецким акцентом — в духе принцессы Софии Ангальт-Цербстской. Голос встроен прямо в
-              приложение и звучит мгновенно на любом устройстве.
+              немецким акцентом — в духе принцессы Софии Ангальт-Цербстской. Файлы лежат в папке
+              <code className="text-[#f1d687]">audio/</code> и загружаются вместе с игрой.
             </p>
           </div>
 
@@ -61,9 +61,9 @@ export const InfoModal: React.FC<InfoModalProps> = ({ open, onClose }) => {
               <span>Запуск с GitHub Pages без сервера</span>
             </div>
             <p>
-              Все иллюстрации, MP3-озвучка, музыкальные акценты и логика собраны в единый
-              статический файл (<code className="text-[#f1d687]">dist/index.html</code>) — достаточно
-              разместить его на GitHub Pages.
+              Сборка <code className="text-[#f1d687]">dist/</code> содержит <code className="text-[#f1d687]">index.html</code>{' '}
+              и папку <code className="text-[#f1d687]">audio/</code> с 66 MP3-репликами. Публикация на GitHub
+              Pages выполняется автоматически через GitHub Actions при каждом пуше в основную ветку.
             </p>
           </div>
         </div>

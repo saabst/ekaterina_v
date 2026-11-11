@@ -1,4 +1,4 @@
-import { VOICE_CLIPS, VoiceClipId } from '../data/voiceAudio';
+import { getClipUrl, VoiceClipId } from '../data/voiceAudio';
 import { VoiceTone } from '../types/game';
 
 class AudioEngine {
@@ -71,13 +71,7 @@ class AudioEngine {
       return;
     }
 
-    const src = VOICE_CLIPS[clipId]?.[tone];
-    if (!src) {
-      if (fallbackText) {
-        this.speakFallback(fallbackText, tone);
-      }
-      return;
-    }
+    const src = getClipUrl(clipId, tone);
 
     try {
       const audio = new Audio(src);
